@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>php</title>
+</head>
+<body>
+	<form action="formdata2a.php" method="post">
+		メールアドレス：<input type="email" name="email"><br>
+		パスワード：<input type="password" name="pass"><br>
+		生年（西暦）：<input type="text" name="birth"><br>
+		<input type="radio" name="sex" value="0">男
+		<input type="radio" name="sex" value="1">女
+		<input type="radio" name="sex" value="2">選択しない<br>
+		旅行目的<br>
+		<input type="checkbox" name="purpose[]" value="仕事">仕事
+		<input type="checkbox" name="purpose[]" value="観光">観光
+		<input type="checkbox" name="purpose[]" value="趣味">趣味
+		<input type="checkbox" name="purpose[]" value="その他">その他<br>
+		ご意見：<textarea cols="40" rows="4" name="opi"></textarea><br>
+		<input type="submit" value="送信">
+	</form>
+</body>
+</html>
