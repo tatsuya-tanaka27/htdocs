@@ -12,7 +12,7 @@
         <title>php</title>
     </head>
     <body>
-        <form method="post" action="traning4.php">
+        <form method="post" action="traning5.php">
             <input type="text" name="val">
             <button><input type="
             " name="send" value="送信"></button>

@@ -4,27 +4,6 @@ session_start();
 $array = array("ユーザーID","メールアドレス","パスワード","性別","電話番号","生まれた年");
 $num = 0;
 
-// POSTなら更新処理実行
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    //ユーザー更新
-        try {
-
-                $pdo = new PDO($_SESSION['dsn'], $_SESSION['duser'], $_SESSION['dpass']);
-                $stmt = $pdo->prepare('delete from kaiin2 where id=:id');
-                $stmt->bindValue(":id", $_SESSION['user_data']['id'], PDO::PARAM_INT);
-                $stmt->execute();
-                session_destroy();
-                // リダイレクトを実行
-	            header( "Location: login.php" );
-
-        } catch (PDOException $e) {
-            print('Error:' . $e->getMessage());
-            exit("DB接続に失敗しました。");
-        }
-
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -54,8 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } 
             ?>
         </table>
-        <form method="post" action="delete.php">
-            <button><input type="submit" name="delete" value="削除"></button><br>
-        </form>
+        <a href="update.php">変更</a>
+        <a href="delete.php">退会</a>
+        <a href="login.php">ログアウト</a>
     </body>
 </html>

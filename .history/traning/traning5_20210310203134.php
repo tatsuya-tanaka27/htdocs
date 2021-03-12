@@ -1,8 +1,11 @@
 <?php 
-    if(isset($_POST['val'])){
-        $result = $_POST['val'];
-        echo $result;
-    }
+    try {
+	$pdo = new PDO('mysql:host=localhost;dbname=traning;charset=utf8','root','',
+	array(PDO::ATTR_EMULATE_PREPARES => false));
+	}
+	catch (PDOException $e) {
+	 die('データベース接続失敗。'.$e->getMessage());
+	}
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +15,7 @@
         <title>php</title>
     </head>
     <body>
-        <form method="post" action="traning4.php">
+        <form method="post" action="traning5.php">
             <input type="text" name="val">
             <button><input type="
             " name="send" value="送信"></button>

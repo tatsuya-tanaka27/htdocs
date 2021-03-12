@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>TOP</title>
+    </head>
+    <body>
+        <form method="post" action="login.php">
+            <span>ログインアドレス</span><input type="text" name="mail" value="<?php echo $initmail ?>"><br>
+            <span>ログインパスワード</span><input type="text" name="pass" value="<?php echo $initpass ?>" ><br>
+            <button><input type="submit" name="send" value="ログイン"></button><br>
+            <a href="registration.php">新規登録会員はこちら</a>
+        </form>
+    </body>
+</html>

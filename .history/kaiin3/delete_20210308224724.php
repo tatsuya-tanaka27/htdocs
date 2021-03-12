@@ -42,6 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </style>
     </head>
     <body>
+        <p>下記のユーザーでログイン中</p>
+        <?php echo $_SESSION['name']; ?>
         <p>ユーザー情報</p>
         <table>
             <?php foreach ($_SESSION['user_data'] as $value) {?>

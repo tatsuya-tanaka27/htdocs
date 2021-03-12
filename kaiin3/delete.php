@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$array = array("ユーザーID","メールアドレス","パスワード","性別","電話番号","生まれた年");
+$array = array("ユーザーID","メールアドレス","パスワード","名前","性別","郵便番号","電話番号");
 $num = 0;
 
 // POSTなら更新処理実行
@@ -9,9 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     //ユーザー更新
         try {
-
                 $pdo = new PDO($_SESSION['dsn'], $_SESSION['duser'], $_SESSION['dpass']);
-                $stmt = $pdo->prepare('delete from kaiin2 where id=:id');
+                $stmt = $pdo->prepare('delete from kaiin3 where id=:id');
                 $stmt->bindValue(":id", $_SESSION['user_data']['id'], PDO::PARAM_INT);
                 $stmt->execute();
                 session_destroy();
