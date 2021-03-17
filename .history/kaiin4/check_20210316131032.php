@@ -1,0 +1,22 @@
+<?php 
+
+function chackParam($name, $pass){
+
+    $check_name = '/^[a-z]{1,}$/';
+    $check_pass = '/^[a-z]{6,}$/';
+
+    if($tel != null && !preg_match($check_tel,$tel)){
+        return false;
+    }
+
+    if(preg_match($check_name,$name) && preg_match($check_pass,$pass)){
+	    return true;
+    } else{
+	    return false;
+    }
+
+}
+
+
+
+?>
